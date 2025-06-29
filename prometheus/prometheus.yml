@@ -1,30 +1,29 @@
 global:
-  scrape_interval: 5s 
+  scrape_interval: 5s
 
 scrape_configs:
   - job_name: prometheus
     static_configs:
-      - targets: ['localhost:9090']
+      - targets: ["localhost:9090"]
 
-  - job_name: 'node-exporter'
+  - job_name: "node-exporter"
     static_configs:
-      - targets: ['node-exporter:9100']
+      - targets: ["node-exporter:9100"]
 
   - job_name: mysql
     static_configs:
-      - targets: ['prom_mysql_exporter:9104']
+      - targets: ["prom_mysql_exporter:9104"]
         labels:
           alias: mysql
 
   - job_name: api
     static_configs:
-      - targets: ['api-bad:8080']
+      - targets: ["api-bad:8080"]
         labels:
           alias: api
 
-
   - job_name: api-better
     static_configs:
-      - targets: ['api-better:8080']
+      - targets: ["api-better:8080"]
         labels:
           alias: api-better
